@@ -12,7 +12,7 @@ No service-role or secret key is used by this app. Never expose a Supabase secre
 
 ## Database migration
 
-Review and apply `supabase/migrations/20261121000000_initial_schema.sql` to the Supabase project. It creates only the two Center Cut tables. RLS is enabled. Public users can submit new inquiries only; they cannot read, update or delete. Authenticated team members listed in team_members can read inquiries and update only the status column.
+The owner reports that migration `20261121000000_initial_schema` has already been applied. Do not run it again. Verify its tables and RLS policies once the correct Supabase project becomes visible to the connected account. It creates only the two Center Cut tables. RLS is enabled. Public users can submit new inquiries only; they cannot read, update or delete. Authenticated team members listed in team_members can read inquiries and update only the status column.
 
 ## Admin account setup
 
@@ -34,5 +34,5 @@ Vercel project `center-cut-golf-co` is already linked to `micahp20/center-cut-go
 - Lead notification emails are not configured; inquiries appear in Admin only.
 - Add durable rate limiting/CAPTCHA before public promotion. Honeypot and validation are basic spam defenses.
 - Confirm event package details, venue requirements, imagery, privacy notice and customer contact information.
-- Apply migration, authorize owners and test inquiry submission plus unauthorized-access denial.
+- Verify the already-applied migration, authorize owners and test inquiry submission plus unauthorized-access denial.
 - Run `npm install && npm run build` (Node 22+) before merging.
