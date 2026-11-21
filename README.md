@@ -4,37 +4,35 @@ Mobile-first Next.js site for mobile golf simulator events in Denver, Boulder an
 
 ## Vercel environment variables
 
-Add under Vercel → Project → Settings → Environment Variables:
+The project already has Supabase URL and publishable key entries. The app expects:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 
-- `NEXT_PUBLIC_SUPABASE_URL`: `https://htanxdeknebmlrapkyvu.supabase.co`
-- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`: Supabase publishable key
-- `SUPABASE_SECRET_KEY`: Supabase server secret key (never prefix with NEXT_PUBLIC_)
+No service-role or secret key is used by this app. Never expose a Supabase secret key in browser code.
 
-Do not commit keys. See `.env.example`.
+## Database migration
 
-## Database
-
-Review and run `supabase/migrations/20261121000000_initial_schema.sql` using Supabase SQL Editor before testing forms. RLS enabled on every new table. Anonymous database reads/writes are denied; only the validated server endpoint can insert using a server-only secret. Approved owners can read inquiries and update only status.
+Review and apply `supabase/migrations/20261121000000_initial_schema.sql` to the Supabase project. It creates only the two Center Cut tables. RLS is enabled. Public users can submit new inquiries only; they cannot read, update or delete. Authenticated team members listed in team_members can read inquiries and update only the status column.
 
 ## Admin account setup
 
-Supabase Dashboard → Authentication → Users → Add user. Create each owner's email/password. Copy the user's UUID (not password). Supabase SQL Editor:
+Supabase Dashboard → Authentication → Users → Add user. Create each owner's email/password. Copy the user's UUID (not password). In Supabase SQL Editor:
 
 ```sql
 insert into public.team_members(user_id) values ('REPLACE-WITH-USER-UUID');
 ```
 
-The admin page uses Supabase Auth. Only users in team_members can read leads. Sign in at /admin.
+Only add trusted owners. Admin page uses Supabase Auth; users not in team_members cannot read leads. Sign in at /admin.
 
-## Deploy
+## Deployment
 
-Vercel → Add New → Project → Import GitHub repo `micahp20/center-cut-golf-co` → Next.js → add environment variables → Deploy. Configure production branch as main. Review and merge the PR when ready. No deployment or database changes were performed by this PR.
+Vercel project `center-cut-golf-co` is already linked to `micahp20/center-cut-golf-co` under team Peptide Index. Feature branch previews are separate from production. Do not merge until the preview and RLS have been tested.
 
 ## Before launch
 
-- Exact approved logo asset is not available; temporary CC/flag text mark is used.
+- Exact approved logo artwork is not yet in the repository; temporary CC/flag mark is used.
 - Lead notification emails are not configured; inquiries appear in Admin only.
-- Add CAPTCHA and durable IP-based rate limiting before public launch; current honeypot and validation alone do not prevent automated spam.
-- Confirm packages, equipment details, photos, service area, privacy notice and customer contact information.
-- Test form submission and owner-only RLS access before handling real customer data.
-- Run `npm install`, `npm run build` (Node 22+) before merging. Lockfile and CI checks should be added before production release.
+- Add durable rate limiting/CAPTCHA before public promotion. Honeypot and validation are basic spam defenses.
+- Confirm event package details, venue requirements, imagery, privacy notice and customer contact information.
+- Apply migration, authorize owners and test inquiry submission plus unauthorized-access denial.
+- Run `npm install && npm run build` (Node 22+) before merging.
