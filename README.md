@@ -1,4 +1,4 @@
-# Center Cut Golf Co. — v1
+# Center Cut Co. — v1
 
 Mobile-first Next.js site for mobile golf simulator events in Denver, Boulder and Northern Colorado. Includes Home, Experiences, Packages, About, Contact, Booking and private Admin.
 
