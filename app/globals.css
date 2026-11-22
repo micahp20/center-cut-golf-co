@@ -41,3 +41,21 @@
 .photo-strip>div:nth-child(3){background-image:var(--sim-tech)}
 .photo-strip span{position:absolute;bottom:0;left:0;right:0;padding:30px 16px 14px;background:linear-gradient(transparent,#071b14cc);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px}
 @media(max-width:760px){.pagehero{min-height:360px;background-position:center}.hero-photo{background-position:55% center}.hero-overlay{background:linear-gradient(90deg,#071e16f2,#071e169e 88%)}.premium-card{padding-top:210px}.premium-card::before{height:185px}.photo-strip{grid-template-columns:1fr}.photo-strip>div{height:210px}.feature-visual{min-height:270px}}
+
+/* Compact navigation redesign: single tidy row, no oversized empty header */
+.topline{display:none}
+.site-header{background:#faf9f5;box-shadow:0 3px 20px #071b140c}
+.header-inner{min-height:70px;max-width:1200px;padding:0 24px;gap:24px;flex-wrap:nowrap}
+.header-brand{display:inline-flex;align-items:center;gap:9px;min-width:0}
+.brand-emblem{display:block;flex:none;width:48px;height:49px;background-image:url('/center-cut-logo.svg');background-repeat:no-repeat;background-position:center top;background-size:73px auto}
+.header-brand .brand-text{gap:3px}
+.header-brand .brand-text strong{font-size:20px;letter-spacing:.5px;white-space:nowrap}
+.header-brand .brand-text small{font-size:7px;letter-spacing:2.2px;white-space:nowrap}
+.main-nav{gap:24px;margin-left:auto}
+.main-nav a{font-size:11px;font-weight:700;letter-spacing:.2px}
+.header-cta{padding:13px 17px;font-size:10px;letter-spacing:.8px;border-radius:2px}
+.header-cta span{margin-left:8px}
+.footer-brand{display:inline-flex;background:white;padding:8px 12px;width:max-content}
+.footer-brand img{width:150px;height:auto}
+@media(max-width:760px){.header-inner{min-height:64px;padding:0 16px;gap:12px;flex-wrap:nowrap}.header-brand .brand-emblem{width:39px;height:40px;background-size:59px auto}.header-brand .brand-text strong{font-size:17px}.header-brand .brand-text small{font-size:6px;letter-spacing:1.6px}.main-nav{order:initial;width:auto;padding:0;margin:0 0 0 auto;gap:12px;overflow:visible}.main-nav a{font-size:10px}.main-nav a:nth-child(3),.main-nav a:nth-child(4){display:none}.header-cta{margin:0;padding:11px 10px;font-size:9px;white-space:nowrap}.header-cta span{margin-left:3px}.footer-brand img{width:145px}}
+@media(max-width:420px){.header-inner{gap:8px}.header-brand .brand-emblem{width:33px;height:36px;background-size:52px auto}.header-brand .brand-text strong{font-size:15px}.header-brand .brand-text small{font-size:5px;letter-spacing:1.2px}.main-nav{gap:9px}.main-nav a{font-size:9px}.header-cta{font-size:8px;padding:10px 8px}}
