@@ -1,0 +1,1 @@
+import Link from "next/link";export function Brand({footer=false}:{footer?:boolean}){return <Link href="/" className={"brand-lockup masters-badge"+(footer?" footer-brand":"")} aria-label="Center Cut Co. home"><img src="/center-cut-masters-badge.svg" alt="Center Cut Golf Co. — Community, Quality, Good Times" width={footer?172:120} height={footer?132:92}/></Link>}

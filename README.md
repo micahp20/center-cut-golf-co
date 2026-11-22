@@ -12,7 +12,7 @@ No service-role or secret key is used by this app. Never expose a Supabase secre
 
 ## Database migration
 
-The owner reports that migration `20261121000000_initial_schema` has already been applied. Do not run it again. Verify its tables and RLS policies once the correct Supabase project becomes visible to the connected account. It creates only the two Center Cut tables. RLS is enabled. Public users can submit new inquiries only; they cannot read, update or delete. Authenticated team members listed in team_members can read inquiries and update only the status column.
+Migration `20261121000000_initial_schema` was applied to the Center Cut Co. Supabase project `yineiteqdhxhuxdtrivb`. Do not rerun it. Both tables have RLS enabled. It creates only the two Center Cut tables. RLS is enabled. Public users can submit new inquiries only; they cannot read, update or delete. Authenticated team members listed in team_members can read inquiries and update only the status column.
 
 ## Admin account setup
 
@@ -30,9 +30,13 @@ Vercel project `center-cut-golf-co` is already linked to `micahp20/center-cut-go
 
 ## Before launch
 
-- Exact approved logo artwork is not yet in the repository; temporary CC/flag mark is used.
+- The uploaded approved green/silver/gold logo informed the SVG monogram. The exact bitmap asset has not yet been committed; replace the vector interpretation with the supplied logo before final approval.
 - Lead notification emails are not configured; inquiries appear in Admin only.
 - Add durable rate limiting/CAPTCHA before public promotion. Honeypot and validation are basic spam defenses.
 - Confirm event package details, venue requirements, imagery, privacy notice and customer contact information.
 - Verify the already-applied migration, authorize owners and test inquiry submission plus unauthorized-access denial.
 - Run `npm install && npm run build` (Node 22+) before merging.
+
+## Premium redesign
+
+The `feature/premium-site-redesign` branch adds a premium event-focused layout, redesigned experiences/packages/about/contact/booking pages, Front Range service-area copy, competition concepts, FAQ, and a brand SVG monogram. It is a review preview; do not merge until approved.
