@@ -1,0 +1,2 @@
+import Link from "next/link";import {coloradoLogoData} from "./colorado-logo-original";
+export function Brand({footer=false}:{footer?:boolean}){return <Link href="/" className={"brand-lockup colorado-brand original-logo"+(footer?" footer-brand":"")} aria-label="Center Cut Co. home"><img src={coloradoLogoData} alt="Center Cut Golf — original blue and silver C's, gold tee, Colorado mountains and Center Cut Golf lettering" width={footer?140:100} height={footer?168:120}/></Link>}

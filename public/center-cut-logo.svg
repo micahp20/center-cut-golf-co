@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100" role="img" aria-labelledby="title desc"><title id="title">Center Cut Golf Simulator</title><desc id="desc">Green left C, silver right C, gold golf pin flag through the center, with Center Cut Golf Simulator and Play Practice Compete beneath</desc><defs><linearGradient id="forest" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#005f20"/><stop offset=".55" stop-color="#003d13"/><stop offset="1" stop-color="#001e0b"/></linearGradient><linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8e9192"/><stop offset=".38" stop-color="#e5e6e4"/><stop offset=".67" stop-color="#a5a7a6"/><stop offset="1" stop-color="#595e5e"/></linearGradient><linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#956000"/><stop offset=".3" stop-color="#e5a900"/><stop offset=".58" stop-color="#ffe05d"/><stop offset="1" stop-color="#b57900"/></linearGradient><linearGradient id="wordgreen" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#006321"/><stop offset="1" stop-color="#002a0e"/></linearGradient><linearGradient id="wordsilver" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b7b9b8"/><stop offset=".6" stop-color="#737978"/><stop offset="1" stop-color="#505657"/></linearGradient></defs>
+<!-- Distinctive opposed, octagonal open Cs from the approved artwork -->
+<path d="M575 240H355L302 294V344H325L361 308H541L566 335V511L539 539H362L326 502H303V553L354 603H575V240Z" fill="url(#forest)"/>
+<path d="M622 240H841L895 294V344H872L835 308H659L633 335V511L659 539H836L873 502H896V553L842 603H622V240Z" fill="url(#steel)"/>
+<!-- The gold pin runs between both Cs and terminates inside the hole -->
+<ellipse cx="599" cy="640" rx="75" ry="20" fill="none" stroke="#0d1d15" stroke-width="12"/>
+<path d="M585 99H609L608 513L601 649L593 622L587 507Z" fill="url(#gold)"/>
+<circle cx="597" cy="90" r="22" fill="url(#gold)" stroke="#a87909" stroke-width="1.5"/>
+<path d="M617 115C675 112 697 152 784 143C767 175 733 201 687 201C660 201 639 189 617 192Z" fill="url(#gold)"/>
+<!-- Wordmark, set as scalable vector typography -->
+<text x="43" y="836" textLength="747" lengthAdjust="spacingAndGlyphs" font-family="Arial Black,Arial,sans-serif" font-size="147" font-weight="900" fill="url(#wordgreen)">CENTER</text>
+<text x="811" y="836" textLength="344" lengthAdjust="spacingAndGlyphs" font-family="Arial Black,Arial,sans-serif" font-size="147" font-weight="900" fill="url(#wordsilver)">CUT</text>
+<line x1="53" y1="895" x2="170" y2="895" stroke="#555b5a" stroke-width="7"/>
+<text x="197" y="916" textLength="803" lengthAdjust="spacingAndGlyphs" font-family="Arial,sans-serif" font-size="69" font-weight="800" letter-spacing="9" fill="#181818">GOLF SIMULATOR</text>
+<line x1="1028" y1="895" x2="1146" y2="895" stroke="#555b5a" stroke-width="7"/>
+<line x1="52" y1="1001" x2="183" y2="1001" stroke="#b88a11" stroke-width="9"/>
+<text x="210" y="1020" textLength="780" lengthAdjust="spacingAndGlyphs" font-family="Arial,sans-serif" font-size="46" font-weight="800" letter-spacing="5" fill="#bd8b0b">PLAY. PRACTICE. COMPETE.</text>
+<line x1="1018" y1="1001" x2="1148" y2="1001" stroke="#b88a11" stroke-width="9"/>
+</svg>
