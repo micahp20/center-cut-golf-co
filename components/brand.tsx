@@ -1,0 +1,2 @@
+import Link from "next/link";import {badgeLogo} from "./badge-logo";
+export function Brand({footer=false}:{footer?:boolean}){return <Link href="/" className={"brand-lockup badge-brand"+(footer?" footer-brand":"")} aria-label="Center Cut Co. home"><img src={badgeLogo} alt="Center Cut Golf Co. circular badge with golf flag and Community, Quality, Good Times" width={footer?160:98} height={footer?122:75}/></Link>}
