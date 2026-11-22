@@ -15,3 +15,29 @@
 .header-inner{min-height:126px}
 .footer-brand{background:#fff;padding:8px 10px;width:max-content;border-radius:2px}
 @media(max-width:760px){.header-inner{min-height:98px}.logo-image img{width:90px;height:auto}.footer-brand img{width:150px;height:auto}}
+
+/* Indoor golf photography replaces large generic green panels. Licensed Pexels/Unsplash stock placeholders. */
+:root{--sim-room:url("https://images.pexels.com/photos/31212256/pexels-photo-31212256.jpeg?auto=compress&cs=tinysrgb&w=1800");--sim-play:url("https://unsplash.com/photos/ALIMs7YpmkI/download?force=true");--sim-tech:url("https://images.pexels.com/photos/34690703/pexels-photo-34690703.jpeg?auto=compress&cs=tinysrgb&w=1400")}
+.hero-photo{background-image:var(--sim-room);background-position:center 52%;filter:none}
+.hero-overlay{background:linear-gradient(90deg,rgba(3,23,15,.96) 0%,rgba(3,25,16,.87) 35%,rgba(3,27,17,.32) 75%,rgba(3,23,15,.18) 100%),linear-gradient(0deg,#061a13b0,transparent 32%)}
+.pagehero{position:relative;isolation:isolate;background:linear-gradient(90deg,rgba(4,29,18,.94),rgba(4,29,18,.68) 55%,rgba(4,29,18,.28)),var(--sim-room) center 45%/cover;min-height:470px;display:flex;align-items:center}
+.pagehero::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,22,14,.25),transparent);z-index:-1}
+.pagehero>.container{position:relative}
+.art-01{background:linear-gradient(0deg,#071b14aa,transparent 60%),var(--sim-room) center/cover}
+.art-02{background:linear-gradient(0deg,#071b14aa,transparent 60%),var(--sim-play) center/cover}
+.art-03{background:linear-gradient(0deg,#071b14aa,transparent 60%),var(--sim-tech) center/cover}
+.experience-symbol{display:none}
+.feature-visual{min-height:450px;background:var(--sim-room) center/cover;border:12px solid #25432f}
+.feature-screen,.feature-platform{display:none}
+.feature-visual-caption{position:absolute;bottom:0;left:0;right:0;margin:0;padding:20px 10px;background:#061c14bb;color:white}
+.service-section{background:linear-gradient(90deg,#071b14f0,#071b14a8),var(--sim-play) center/cover}
+.premium-card{position:relative;padding-top:235px;overflow:hidden}
+.premium-card::before{content:"";position:absolute;top:0;left:0;right:0;height:200px;background:var(--sim-room) center/cover}
+.premium-card:nth-child(2)::before{background-image:var(--sim-play)}
+.premium-card:nth-child(3)::before{background-image:var(--sim-tech)}
+.photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:45px 0}
+.photo-strip>div{height:280px;background:var(--sim-room) center/cover;position:relative}
+.photo-strip>div:nth-child(2){background-image:var(--sim-play)}
+.photo-strip>div:nth-child(3){background-image:var(--sim-tech)}
+.photo-strip span{position:absolute;bottom:0;left:0;right:0;padding:30px 16px 14px;background:linear-gradient(transparent,#071b14cc);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px}
+@media(max-width:760px){.pagehero{min-height:360px;background-position:center}.hero-photo{background-position:55% center}.hero-overlay{background:linear-gradient(90deg,#071e16f2,#071e169e 88%)}.premium-card{padding-top:210px}.premium-card::before{height:185px}.photo-strip{grid-template-columns:1fr}.photo-strip>div{height:210px}.feature-visual{min-height:270px}}
