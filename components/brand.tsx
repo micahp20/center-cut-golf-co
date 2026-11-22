@@ -1,2 +1,2 @@
-import Link from "next/link";
-export function Brand({footer=false}:{footer?:boolean}){return <Link href="/" className={"brand-lockup"+(footer?" footer-brand":" header-brand")} aria-label="Center Cut Co. home">{footer?<img src="/center-cut-logo.svg" alt="Center Cut Golf Simulator — Play. Practice. Compete." width={175} height={160}/>:<><span className="brand-emblem" aria-hidden="true"/><span className="brand-text"><strong>CENTER <em>CUT</em></strong><small>GOLF SIMULATOR</small></span></>}</Link>}
+import Link from "next/link";import {badgeLogo} from "./badge-logo";
+export function Brand({footer=false}:{footer?:boolean}){return <Link href="/" className={"brand-lockup badge-brand"+(footer?" footer-brand":"")} aria-label="Center Cut Co. home"><img src={badgeLogo} alt="Center Cut Golf Co. circular badge with golf flag and Community, Quality, Good Times" width={footer?160:98} height={footer?122:75}/></Link>}
