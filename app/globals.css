@@ -8,3 +8,10 @@
 .art-02{background:linear-gradient(0deg,#071b14bb,#071b1450),url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=900&q=80') center/cover,#234b36}
 .art-03{background:linear-gradient(0deg,#071b14bd,#071b1450),url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=80') center/cover,#153e2b}
 .experience-symbol{font-size:100px;opacity:.75;text-shadow:0 8px 25px #071b14aa}
+
+/* Approved full wordmark artwork — preserve its proportions on every screen. */
+.brand-lockup.logo-image{display:inline-flex;align-items:center;justify-content:center;line-height:0}
+.logo-image img{display:block;max-width:100%;height:auto}
+.header-inner{min-height:126px}
+.footer-brand{background:#fff;padding:8px 10px;width:max-content;border-radius:2px}
+@media(max-width:760px){.header-inner{min-height:98px}.logo-image img{width:90px;height:auto}.footer-brand img{width:150px;height:auto}}
