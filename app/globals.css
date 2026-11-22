@@ -278,3 +278,86 @@
 @media(max-width:850px){.bc-hero-media{left:42%}.bc-hero-shade{background:linear-gradient(90deg,#f7f7f5 0%,#f7f7f5f0 52%,#f7f7f540 100%)}.bc-badge-hero{width:240px}}
 @media(max-width:700px){.badge-theme .header-inner{min-height:72px}.badge-theme .badge-brand img{width:76px;height:60px}.bc-hero{min-height:0}.bc-hero-layout{grid-template-columns:1fr;min-height:0}.bc-hero-media{left:0;opacity:.13;filter:grayscale(1)}.bc-hero-shade{background:#f8f8f4c9}.bc-hero-copy{padding:58px 0 20px}.bc-hero h1{font-size:clamp(57px,12vw,84px)}.bc-hero-copy p{color:#222}.bc-badge-hero{width:180px;justify-self:center;margin:0 auto 35px;border:5px solid #fff}.bc-hero-footer{padding:15px 20px}.bc-story-copy{padding:55px 22px}.bc-event{height:360px}}
 @media(max-width:420px){.bc-hero h1{font-size:55px}.bc-actions .bc-btn{width:100%}.badge-theme .main-nav a{font-size:9px}.badge-theme .header-cta{font-size:8px;padding:10px 8px}}
+
+/* CENTER CUT CO. / APPROVED MASTERS BADGE — FINAL GREEN EDITION */
+.badge-theme{--forest:#00462c;--deep:#002b1b;--green:#07583a;--leaf:#237a53;--gold:#f7c62a;--cream:#f9f8f2;--ink:#0d2b1e;--muted:#53675c;--line:#d8dfd6;background:#f9f8f2;color:#0d2b1e}
+.badge-theme .site-header{background:#00462c;border-bottom:1px solid #ffffff24}
+.badge-theme .header-inner{min-height:85px}
+.badge-theme .brand-lockup.masters-badge{background:transparent;padding:0;border:0;display:flex;align-items:center}
+.badge-theme .masters-badge img{width:118px;height:auto;object-fit:contain;display:block}
+.badge-theme .main-nav a{color:#f9f8f2}
+.badge-theme .main-nav a:hover{color:#ffdc58}
+.badge-theme .header-cta{background:#f7c62a;color:#07331f;border-color:#f7c62a;font-weight:900}
+.badge-theme .header-cta span{color:#07331f}
+.bc-hero{background:#003b25;color:#fff;min-height:670px}
+.bc-hero-media{left:0;right:0;opacity:1;filter:none;background-image:url('https://images.pexels.com/photos/31212256/pexels-photo-31212256.jpeg?auto=compress&cs=tinysrgb&w=2200')}
+.bc-hero-shade{background:linear-gradient(90deg,#00351ff7 0%,#003b25f0 40%,#003b25a0 75%,#003b25a8)}
+.bc-hero-layout{grid-template-columns:1.1fr .9fr;min-height:630px}
+.bc-hero h1{color:#fff}
+.bc-hero h1 i{color:#ffcf29;text-decoration:none}
+.bc-hero-copy p{color:#e4efe6}
+.bc-kicker,.bc-overline{color:#ffdc65}
+.bc-btn{background:#ffcf29;color:#0b2f1f;border-color:#ffcf29}
+.bc-btn:hover{background:#ffe173}
+.bc-plain{color:#fff;border-bottom-color:#ffcf29}
+.bc-badge-hero{width:min(100%,395px);background:#00462c;border:2px solid #e7e8d4;box-shadow:0 20px 65px #0005;aspect-ratio:1}
+.bc-badge-hero img{width:100%;height:auto}
+.bc-hero-footer{background:#00311e;color:#e4eee5}
+.bc-values{background:#f7c62a;color:#0d3522;border-color:#f7c62a}
+.bc-values i{color:#00462c}
+.bc-intro{background:#f9f8f2}
+.bc-intro h2 em,.bc-challenges h2 em{color:#177149}
+.bc-intro p{color:#4e6657}
+.bc-underlink{color:#00462c;border-bottom-color:#f0bd19}
+.bc-experiences{background:#e9eee6}
+.bc-event{background:#003b25}
+.bc-event:before{filter:none;background-image:linear-gradient(0deg,#002b1bf0,#002b1b1c 78%),url('https://images.pexels.com/photos/31212256/pexels-photo-31212256.jpeg?auto=compress&cs=tinysrgb&w=1100')}
+.bc-event-02:before{background-image:linear-gradient(0deg,#002b1bf0,#002b1b1c 78%),url('https://unsplash.com/photos/ALIMs7YpmkI/download?force=true')}
+.bc-event-03:before{background-image:linear-gradient(0deg,#002b1bf0,#002b1b1c 78%),url('https://images.pexels.com/photos/34690703/pexels-photo-34690703.jpeg?auto=compress&cs=tinysrgb&w=1100')}
+.bc-event-top{color:#ffdf73}
+.bc-event h3,.bc-event p{color:#fff}
+.bc-event b{color:#ffcf29}
+.bc-story{background:#00462c;color:#fff}
+.bc-story-copy{background:#00462c}
+.bc-story-image{filter:none}
+.bc-story h2,.bc-story h2 em{color:#fff}
+.bc-story h2 em{color:#ffcf29}
+.bc-story-copy>p{color:#e2ede4}
+.bc-steps{border-top-color:#ffffff3a}
+.bc-steps>div{border-bottom-color:#ffffff3a;color:#fff}
+.bc-steps b{color:#ffcf29}
+.bc-story-copy .bc-btn{background:#ffcf29;color:#0b2f1f}
+.bc-challenges{background:#f9f8f2}
+.bc-challenge-grid article>span{color:#005537}
+.bc-challenge-grid b{color:#a7831b}
+.bc-service{background:linear-gradient(90deg,#00321ff0,#00321f9a),url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1800&q=80') center/cover}
+.bc-service .bc-btn{background:#ffcf29;color:#07311e}
+.bc-final{background:#00462c;color:#fff}
+.bc-final h2,.bc-final .bc-overline{color:#fff}
+.bc-final h2 em{color:#ffcf29}
+.bc-final .bc-btn{background:#ffcf29;color:#07311e}
+.badge-theme .site-footer{background:#002b1b}
+.badge-theme .footer-grid h4{color:#ffcf29}
+.badge-theme .footer-grid .footer-contact{color:#ffcf29!important}
+.badge-theme .pagehero{background:linear-gradient(90deg,#00351ff0,#00351f9a),url('https://images.pexels.com/photos/31212256/pexels-photo-31212256.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover}
+.badge-theme .pagehero h1,.badge-theme .pagehero p{color:#fff}
+.badge-theme .eyebrow{color:#bd9620}
+.badge-theme .pagehero .eyebrow{color:#ffcf29}
+.badge-theme .premium-card{border-top-color:#00462c}
+.badge-theme .premium-card.featured{background:#00462c;border-top-color:#ffcf29}
+.badge-theme .premium-card.featured h3{color:#fff}
+.badge-theme .premium-card.featured .eyebrow{color:#ffcf29}
+.badge-theme .premium-card.featured p,.badge-theme .premium-card.featured ul{color:#e5efe7}
+.badge-theme .btn-gold,.badge-theme .button{background:#00462c;color:#fff}
+.badge-theme .premium-card.featured .btn-gold{background:#ffcf29;color:#07311e}
+.badge-theme .tile{border-top:3px solid #00462c}
+.badge-theme .tile a{color:#005537}
+.badge-theme .form label{color:#102c1f}
+.badge-theme .form input:focus,.badge-theme .form select:focus,.badge-theme .form textarea:focus{outline-color:#f1c124}
+.badge-theme .form .button{background:#00462c;color:#fff}
+.badge-theme .photo-strip>div,.badge-theme .premium-card::before{filter:none}
+.badge-theme .quote-banner{background:#e9eee6;color:#2d4737}
+.badge-theme .service-section{background:linear-gradient(90deg,#00351fee,#00351fb1),url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1800&q=80') center/cover}
+.badge-theme .section .arrow-link{border-bottom-color:#e3b52a}
+.badge-theme .section .arrow-link span{color:#00462c}
+@media(max-width:700px){.badge-theme .header-inner{min-height:75px}.badge-theme .masters-badge img{width:87px;height:auto}.bc-hero-media{left:0;opacity:.6;filter:none}.bc-hero-shade{background:linear-gradient(90deg,#00351fe8,#00351fc9)}.bc-hero h1{color:#fff}.bc-hero-copy p{color:#f3f6f1}.bc-badge-hero{width:235px;border:2px solid #f6efc8}.bc-hero-footer{background:#002b1b}}
