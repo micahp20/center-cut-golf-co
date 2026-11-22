@@ -143,3 +143,76 @@
 @media(max-width:850px){.badge-theme .header-inner{gap:10px;padding:0 14px}.badge-theme .main-nav{gap:14px}.badge-theme .main-nav a{font-size:10px}.badge-theme .header-cta{padding:12px;font-size:9px}.bc-hero-layout{grid-template-columns:1fr 0.7fr}.bc-badge-hero{width:300px}.bc-story-copy{padding:60px 30px}.bc-intro{gap:45px}}
 @media(max-width:700px){.badge-theme .header-inner{min-height:70px}.badge-theme .badge-brand img{width:75px;height:65px}.badge-theme .main-nav a:nth-child(3),.badge-theme .main-nav a:nth-child(4),.badge-theme .main-nav a:nth-child(5){display:none}.badge-theme .main-nav{margin-left:auto}.bc-hero-layout{grid-template-columns:1fr;gap:0}.bc-hero-copy{padding:75px 0 20px}.bc-hero h1{font-size:clamp(62px,12vw,92px)}.bc-badge-hero{width:250px;margin-bottom:55px}.bc-hero-footer{font-size:8px;padding:16px}.bc-values .container{gap:7px;min-height:55px;font-size:9px;letter-spacing:1px}.bc-intro{grid-template-columns:1fr;gap:24px;padding-top:70px;padding-bottom:70px}.bc-experiences,.bc-challenges{padding:70px 0}.bc-event-grid{grid-template-columns:1fr}.bc-event{height:330px}.bc-story{grid-template-columns:1fr}.bc-story-image{min-height:280px}.bc-story-copy{padding:60px 24px}.bc-challenge-grid{grid-template-columns:1fr}.bc-challenge-grid article{border-right:0;border-bottom:1px solid #d8ded2}.bc-service,.bc-final{padding:75px 0}}
 @media(max-width:420px){.badge-theme .main-nav{gap:10px}.badge-theme .main-nav a{font-size:9px}.badge-theme .header-cta{padding:10px 8px;font-size:8px}.bc-hero h1{font-size:58px}.bc-actions .bc-btn{width:100%}.bc-hero-footer span:last-child{display:none}.bc-values .container{font-size:8px}.bc-intro h2,.bc-section-head h2,.bc-story h2{font-size:45px}}
+
+/* Monochrome edition — deliberately matches the original black-and-white circular badge. */
+.badge-theme{--forest:#121212;--deep:#080808;--green:#202020;--leaf:#424242;--gold:#e7e7e7;--cream:#f5f5f4;--ink:#151515;--muted:#727272;--line:#d7d7d7;background:#f4f4f3;color:#151515}
+.badge-theme .site-header{background:#0b0b0b;border-bottom:1px solid #383838}
+.badge-theme .header-inner{min-height:88px}
+.badge-theme .main-nav a{color:#e9e9e9}
+.badge-theme .main-nav a:hover{color:#fff}
+.badge-theme .header-cta{background:#f4f4f4;color:#111;border-radius:0}
+.badge-theme .header-cta span{color:#111}
+.bc-hero{background:#050505;min-height:710px}
+.bc-hero-media{background-image:url('https://images.pexels.com/photos/31212256/pexels-photo-31212256.jpeg?auto=compress&cs=tinysrgb&w=2200');filter:grayscale(1) contrast(1.08)}
+.bc-hero-shade{background:linear-gradient(90deg,#030303fa 0%,#080808ed 42%,#0c0c0ca0 75%,#0b0b0b9e)}
+.bc-hero-layout{min-height:680px}
+.bc-kicker,.bc-overline{color:#a7a7a7}
+.bc-hero h1{letter-spacing:-2px}
+.bc-hero h1 i{color:#fff;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:10px}
+.bc-hero-copy p{color:#d2d2d2}
+.bc-btn{background:#f3f3f3;color:#111;border:1px solid #f3f3f3}
+.bc-btn:hover{background:#d6d6d6}
+.bc-plain{border-bottom-color:#d5d5d5}
+.bc-badge-hero{background:#070707d9;border:1px solid #b9b9b95c;box-shadow:0 0 0 12px #ffffff08,0 28px 80px #0009}
+.bc-hero-footer{border-top-color:#ffffff30;color:#b8b8b8}
+.bc-values{background:#191919;color:#fff;border-top:1px solid #424242;border-bottom:1px solid #424242}
+.bc-values i{color:#8b8b8b}
+.bc-intro{background:#f4f4f3}
+.bc-intro h2 em,.bc-challenges h2 em{color:#555}
+.bc-intro p{color:#575757}
+.bc-underlink{color:#181818;border-bottom-color:#242424}
+.bc-experiences{background:#e7e7e5}
+.bc-event{background:#141414}
+.bc-event:before,.bc-event-02:before,.bc-event-03:before{filter:grayscale(1);background-image:linear-gradient(0deg,#050505f2,#11111135 75%),url('https://images.pexels.com/photos/31212256/pexels-photo-31212256.jpeg?auto=compress&cs=tinysrgb&w=1100')}
+.bc-event-02:before{background-image:linear-gradient(0deg,#050505f2,#11111135 75%),url('https://unsplash.com/photos/ALIMs7YpmkI/download?force=true')}
+.bc-event-03:before{background-image:linear-gradient(0deg,#050505f2,#11111135 75%),url('https://images.pexels.com/photos/34690703/pexels-photo-34690703.jpeg?auto=compress&cs=tinysrgb&w=1100')}
+.bc-event-top{color:#d2d2d2}
+.bc-event p{color:#d8d8d8}
+.bc-event b{color:#fff}
+.bc-story{background:#111}
+.bc-story-image{filter:grayscale(1)}
+.bc-story h2 em{color:#f2f2f2}
+.bc-story-copy>p{color:#d0d0d0}
+.bc-steps b{color:#bcbcbc}
+.bc-challenges{background:#f7f7f6}
+.bc-challenge-grid{border-color:#d5d5d5}
+.bc-challenge-grid article{border-color:#d5d5d5}
+.bc-challenge-grid b{color:#7d7d7d}
+.bc-challenge-grid article>span{color:#252525}
+.bc-challenge-grid p,.bc-fine{color:#666}
+.bc-service{background:linear-gradient(90deg,#050505f3,#111111bd),url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1800&q=80') center/cover}
+.bc-service p{color:#d4d4d4}
+.bc-final{background:#111;border-top:1px solid #4a4a4a}
+.bc-final h2 em{color:#d0d0d0}
+.badge-theme .site-footer{background:#090909}
+.badge-theme .footer-grid h4{color:#c8c8c8}
+.badge-theme .footer-grid .footer-contact{color:#f2f2f2!important}
+.badge-theme .pagehero{background:linear-gradient(90deg,#050505ee,#151515a8),url('https://images.pexels.com/photos/31212256/pexels-photo-31212256.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover}
+.badge-theme .eyebrow{color:#a5a5a5}
+.badge-theme .pagehero h1{color:#fff}
+.badge-theme .premium-card{border-top-color:#333}
+.badge-theme .premium-card.featured{background:#1a1a1a;border-top-color:#b8b8b8}
+.badge-theme .premium-card.featured p,.badge-theme .premium-card.featured ul{color:#d2d2d2}
+.badge-theme .btn-gold,.badge-theme .button{background:#202020;color:#fff}
+.badge-theme .premium-card.featured .btn-gold{background:#f1f1f1;color:#111}
+.badge-theme .tile{border-top:3px solid #222}
+.badge-theme .tile a{color:#222}
+.badge-theme .form{border:1px solid #ddd}
+.badge-theme .form input:focus,.badge-theme .form select:focus,.badge-theme .form textarea:focus{outline-color:#777}
+.badge-theme .form .button{background:#111;color:#fff}
+.badge-theme .photo-strip>div,.badge-theme .premium-card::before{filter:grayscale(1)}
+.badge-theme .quote-banner{background:#e7e7e7;color:#333}
+.badge-theme .service-section{background:linear-gradient(90deg,#080808ef,#151515b2),url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1800&q=80') center/cover}
+.badge-theme .section .arrow-link{border-bottom-color:#222}
+.badge-theme .section .arrow-link span{color:#222}
+@media(max-width:700px){.bc-badge-hero{width:230px}.bc-hero{min-height:0}.bc-hero-copy{padding-top:65px}.badge-theme .header-inner{min-height:72px}}
