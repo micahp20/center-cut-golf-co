@@ -1,0 +1,2 @@
+import Link from "next/link";
+export function Brand({footer=false}:{footer?:boolean}){return <Link href="/" className={"brand-lockup"+(footer?" footer-brand":" header-brand")} aria-label="Center Cut Co. home">{footer?<img src="/center-cut-logo.svg" alt="Center Cut Golf Simulator — Play. Practice. Compete." width={175} height={160}/>:<><span className="brand-emblem" aria-hidden="true"/><span className="brand-text"><strong>CENTER <em>CUT</em></strong><small>GOLF SIMULATOR</small></span></>}</Link>}
