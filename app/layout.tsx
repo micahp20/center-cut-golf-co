@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import "./club.css";
 import EventMenu from "./event-menu";
@@ -12,6 +13,9 @@ export const metadata: Metadata = {
 const pages = ["Packages", "About", "Contact"];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const analyticsEnabled = measurementId && /^G-[A-Z0-9]+$/.test(measurementId);
+
   return <html lang="en"><body>
     <header className="club-header">
       <Link className="club-brand" href="/">
@@ -32,5 +36,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <p><a href="tel:+17209281208">(720) 928-1208</a></p>
       <p><Link href="/privacy">Privacy policy</Link> · <Link href="/admin">Team login</Link></p></div>
     </div></footer>
+    {analyticsEnabled && (
+      <>
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`} strategy="afterInteractive" />
+        <Script id="center-cut-analytics" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { window.dataLayer.push(arguments); };
+          window.gtag('js', new Date());
+          window.gtag('config', ${JSON.stringify(measurementId)}, {
+            allow_google_signals: false,
+            allow_ad_personalization_signals: false
+          });
+        `}</Script>
+      </>
+    )}
   </body></html>;
 }

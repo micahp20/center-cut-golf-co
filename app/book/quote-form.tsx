@@ -34,6 +34,10 @@ export default function QuoteForm({ eventType }: { eventType?: string }) {
         setStatus({ message: result?.error || "We couldn’t send your request. Please try again or call us.", error: true });
         return;
       }
+      if (response.status === 201) {
+        const analytics = window as Window & { gtag?: (command: "event", eventName: string) => void };
+        analytics.gtag?.("event", "generate_lead");
+      }
       form.reset();
       startedAt.current = Date.now();
       setStatus({ message: "Request received! We’ll email you to follow up about availability and pricing.", error: false });
