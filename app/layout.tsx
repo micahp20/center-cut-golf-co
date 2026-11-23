@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import "./club.css";
 import EventMenu from "./event-menu";
+import { locations } from "./locations/catalog";
 
 export const metadata: Metadata = {
   title: "Center Cut Golf Co | Colorado Mobile Golf Simulator",
@@ -31,7 +32,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Link className="book-link" href="/book">Get a quote</Link>
     </header>
     <main>{children}</main>
-    <footer><div className="container club-footer">
+    <footer>
+    <div className="container footer-areas">
+      <div className="footer-areas-heading"><h2>Popular Service Areas</h2><Link href="/locations">View all service areas</Link></div>
+      <nav aria-label="Popular service areas" className="footer-city-links">
+        {locations.map(location => <Link key={location.slug} href={`/locations/${location.slug}`}>{location.city}</Link>)}
+      </nav>
+      <p>Mobile golf simulator rentals from Castle Rock to Wellington. Venue suitability and availability are confirmed with each quote.</p>
+    </div>
+    <div className="container club-footer">
       <div><strong>Center Cut Golf Co</strong><p>South Denver · Denver Metro · Northern Colorado</p></div>
       <div><a href="mailto:info@centercutgolfco.com">info@centercutgolfco.com</a>
       <p><a href="tel:+17209281208">(720) 928-1208</a></p>
