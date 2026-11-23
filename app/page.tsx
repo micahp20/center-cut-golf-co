@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const occasions = [
   ["Weddings", "/events/weddings", "Give the wedding party a reason to gather between the ceremony and the first dance."],
   ["Corporate Events", "/events/corporate-events", "Pair up colleagues for a friendly challenge at your next team or client event."],
-  ["Private Parties", "/events/private-parties", "Put first-time golfers and family regulars on the same tee for a birthday or reunion."]
+  ["Birthdays & Private Parties", "/events/private-parties", "Put first-time golfers and family regulars on the same tee for a birthday or reunion."]
 ];
 
 const rentalOptions = [
