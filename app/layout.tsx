@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Bring mobile simulator golf to weddings, company events and family parties in South Denver, Denver Metro, and Northern Colorado."
 };
 
-const pages = ["Packages", "FAQ", "About", "Contact"];
+const pages = ["Packages", "FAQ", "Contact"];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
