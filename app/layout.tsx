@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Bring mobile simulator golf to weddings, company events and family parties in South Denver, Denver Metro, and Northern Colorado."
 };
 
-const pages = ["Packages", "About", "Contact"];
+const pages = ["Packages", "FAQ", "About", "Contact"];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -34,7 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div><strong>Center Cut Golf Co</strong><p>South Denver · Denver Metro · Northern Colorado</p></div>
       <div><a href="mailto:info@centercutgolfco.com">info@centercutgolfco.com</a>
       <p><a href="tel:+17209281208">(720) 928-1208</a></p>
-      <p><Link href="/privacy">Privacy policy</Link> · <Link href="/admin">Team login</Link></p></div>
+      <p><Link href="/faq">FAQ</Link> · <Link href="/privacy">Privacy policy</Link> · <Link href="/admin">Team login</Link></p></div>
     </div></footer>
     {analyticsEnabled && (
       <>
