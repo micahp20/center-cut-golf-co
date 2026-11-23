@@ -24,6 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </Link>
       <nav aria-label="Main navigation">
         <EventMenu />
+        <Link href="/locations">Service Areas</Link>
         {pages.map(page =>
         <Link href={"/" + page.toLowerCase()} key={page}>{page}</Link>
       )}</nav>
@@ -34,7 +35,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div><strong>Center Cut Golf Co</strong><p>South Denver · Denver Metro · Northern Colorado</p></div>
       <div><a href="mailto:info@centercutgolfco.com">info@centercutgolfco.com</a>
       <p><a href="tel:+17209281208">(720) 928-1208</a></p>
-      <p><Link href="/faq">FAQ</Link> · <Link href="/privacy">Privacy policy</Link> · <Link href="/admin">Team login</Link></p></div>
+      <p><Link href="/locations">Service Areas</Link> · <Link href="/faq">FAQ</Link> · <Link href="/privacy">Privacy policy</Link> · <Link href="/admin">Team login</Link></p></div>
     </div></footer>
     {analyticsEnabled && (
       <>
