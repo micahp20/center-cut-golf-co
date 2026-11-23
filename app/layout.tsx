@@ -12,6 +12,52 @@ export const metadata: Metadata = {
 };
 
 const pages = ["Packages", "FAQ", "Contact"];
+const serviceRegions = [
+  {
+    "title": "South Denver",
+    "cities": [
+      "Castle Rock",
+      "Parker",
+      "Highlands Ranch",
+      "Lone Tree",
+      "Castle Pines",
+      "Centennial",
+      "Littleton"
+    ]
+  },
+  {
+    "title": "Denver Metro",
+    "cities": [
+      "Denver",
+      "Aurora",
+      "Lakewood",
+      "Arvada",
+      "Golden",
+      "Westminster",
+      "Thornton",
+      "Broomfield",
+      "Brighton",
+      "Greenwood Village"
+    ]
+  },
+  {
+    "title": "Northern Colorado",
+    "cities": [
+      "Fort Collins",
+      "Loveland",
+      "Longmont",
+      "Boulder",
+      "Greeley",
+      "Windsor",
+      "Erie",
+      "Lafayette",
+      "Louisville",
+      "Berthoud",
+      "Johnstown",
+      "Wellington"
+    ]
+  }
+];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -35,9 +81,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <footer>
     <div className="container footer-areas">
       <div className="footer-areas-heading"><h2>Popular Service Areas</h2><Link href="/locations">View all service areas</Link></div>
-      <nav aria-label="Popular service areas" className="footer-city-links">
-        {locations.map(location => <Link key={location.slug} href={`/locations/${location.slug}`}>{location.city}</Link>)}
-      </nav>
+      <div className="footer-region-grid">
+        {serviceRegions.map(region => (
+          <section className="footer-region" key={region.title} aria-label={region.title}>
+            <h3>{region.title}</h3>
+            <ul>
+              {region.cities.map(city => {
+                const page = locations.find(location => location.city === city);
+                return <li key={city}>{page ? <Link href={`/locations/${page.slug}`}>{city}</Link> : <span>{city}</span>}</li>;
+              })}
+            </ul>
+          </section>
+        ))}
+      </div>
       <p>Mobile golf simulator rentals from Castle Rock to Wellington. Venue suitability and availability are confirmed with each quote.</p>
     </div>
     <div className="container club-footer">
