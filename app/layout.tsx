@@ -27,6 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <footer><div className="container club-footer">
       <div><strong>Center Cut Golf Co</strong><p>Denver · Boulder · Northern Colorado</p></div>
       <div><a href="mailto:info@centercutgolfco.com">info@centercutgolfco.com</a>
+      <p><a href="tel:+17209281208">(720) 928-1208</a></p>
       <p><Link href="/privacy">Privacy policy</Link> · <Link href="/admin">Team login</Link></p></div>
     </div></footer>
   </body></html>;
