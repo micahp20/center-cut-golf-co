@@ -79,5 +79,5 @@ export const events = [
 ];
 
 export function eventPhoto(slug: string) {
-  return `/center-cut/events/${slug}.webp`;
+  return `/center-cut/events/${slug}.png`;
 }
