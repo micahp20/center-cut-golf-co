@@ -260,31 +260,35 @@ a:focus-visible,button:focus-visible { outline:3px solid #218fd1; outline-offset
 @media(max-width:850px) { .faq-layout { grid-template-columns:1fr; } .faq-intro { position:static; } }
 @media(max-width:420px) { .club-header nav { gap:.35rem; font-size:.78rem; } .club-header nav a { white-space:nowrap; } }
 
-/* Contact page — event photography, readable contrast */
+/* Contact page — visible simulator photography with legible headline */
 .contact-photo-hero {
   position:relative;
   isolation:isolate;
-  min-height:clamp(22rem,38vw,32rem);
+  min-height:clamp(25rem,41vw,35rem);
   display:flex;
   align-items:center;
   background-color:#062e21;
   background-image:
-    linear-gradient(90deg,rgba(4,35,25,.95) 0%,rgba(4,35,25,.85) 42%,rgba(4,35,25,.52) 100%),
+    linear-gradient(90deg,rgba(3,29,21,.94) 0%,rgba(3,29,21,.77) 32%,rgba(3,29,21,.30) 63%,rgba(3,29,21,.05) 100%),
     url("/center-cut/events/corporate-events.png");
-  background-position:center,center 47%;
+  background-position:center, center 43%;
   background-size:cover;
   color:#fff;
 }
 .contact-photo-hero .container { position:relative; z-index:1; }
-.contact-photo-hero h1 { max-width:13ch; text-wrap:balance; }
-.contact-photo-hero p { max-width:35rem; color:#f8f8ef; text-shadow:0 1px 3px rgba(0,0,0,.4); }
+.contact-photo-hero h1 { max-width:13ch; text-wrap:balance; text-shadow:0 2px 12px rgba(0,0,0,.30); }
+.contact-photo-hero p { max-width:32rem; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.50); }
 .contact-photo-hero .eyebrow { color:#ffca20; }
 @media(max-width:700px) {
   .contact-photo-hero {
-    min-height:22rem;
+    min-height:27rem;
+    padding-block:3.2rem;
     background-image:
-      linear-gradient(90deg,rgba(4,35,25,.94) 0%,rgba(4,35,25,.79) 64%,rgba(4,35,25,.68) 100%),
+      linear-gradient(90deg,rgba(3,29,21,.84) 0%,rgba(3,29,21,.62) 46%,rgba(3,29,21,.20) 100%),
       url("/center-cut/events/corporate-events.png");
     background-position:center,58% center;
   }
+  .contact-photo-hero .container { width:90%; }
+  .contact-photo-hero h1 { max-width:10ch; }
+  .contact-photo-hero p { max-width:18rem; }
 }
