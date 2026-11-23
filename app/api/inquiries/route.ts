@@ -3,15 +3,64 @@ import {createClient} from "@supabase/supabase-js";
 export const runtime="nodejs";
 const types=["Corporate","Wedding","Birthday","Private Party","Golf Tournament","Fundraiser","Other"];
 function str(x:unknown,max:number){return typeof x==="string"?x.trim().slice(0,max):""}
-async function alertOwner(details:{name:string;email:string;phone:string;event_type:string;event_date:string;city:string;guest_count:number;notes:string}){
- const apiKey=process.env.RESEND_API_KEY,from=process.env.BOOKING_FROM_EMAIL,to=process.env.BOOKING_ALERT_EMAIL;
- if(!apiKey||!from||!to)return;
- const rows=Object.entries(details).map(([k,v])=>k+": "+String(v)).join("\n");
- try{
-  const response=await fetch("https://api.resend.com/emails",{method:"POST",headers:{"Authorization":"Bearer "+apiKey,"Content-Type":"application/json"},body:JSON.stringify({from,to:[to],subject:"New Center Cut Co. booking request",text:"A new inquiry was received:\n\n"+rows+"\n\nSign in to the Center Cut Co. admin to update its status."}),signal:AbortSignal.timeout(8000)});
-  if(!response.ok)console.error("Booking alert delivery failed",response.status);
- }catch{console.error("Booking alert delivery unavailable")}
+type InquiryEmail = {
+  name: string;
+  email: string;
+  phone: string;
+  event_type: string;
+  event_date: string;
+  city: string;
+  guest_count: number;
+  notes: string;
+};
+
+type EmailMessage = {
+  to: string[];
+  reply_to: string;
+  subject: string;
+  text: string;
+};
+
+async function sendEmail(apiKey: string, from: string, message: EmailMessage, kind: string) {
+  try {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ from, ...message }),
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!response.ok) console.error("Inquiry email delivery failed", kind, response.status);
+  } catch {
+    console.error("Inquiry email delivery unavailable", kind);
+  }
 }
+
+async function sendInquiryEmails(inquiry: InquiryEmail) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.BOOKING_FROM_EMAIL;
+  const inbox = process.env.BOOKING_ALERT_EMAIL;
+  if (!apiKey || !from || !inbox) return;
+
+  const details = Object.entries(inquiry).map(([label, value]) => `${label}: ${value}`).join("\n");
+  await Promise.all([
+    sendEmail(apiKey, from, {
+      to: [inbox],
+      reply_to: inquiry.email,
+      subject: "New Center Cut Golf Co. inquiry",
+      text: `A new inquiry was received:\n\n${details}\n\nSign in to Team login to update its status.`,
+    }, "team alert"),
+    sendEmail(apiKey, from, {
+      to: [inquiry.email],
+      reply_to: inbox,
+      subject: "Center Cut Golf Co. received your request",
+      text: "Thanks for reaching out to Center Cut Golf Co. We received your request. Our team will follow up about availability and pricing. Your event is confirmed separately.\n\nCenter Cut Golf Co.",
+    }, "customer confirmation"),
+  ]);
+}
+
 export async function POST(req:NextRequest){
  try{
   const origin=req.headers.get("origin");if(origin&&origin!==req.nextUrl.origin)return NextResponse.json({error:"Invalid request origin"},{status:403});
@@ -28,7 +77,7 @@ export async function POST(req:NextRequest){
   const db=createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}});
   const {error}=await db.from("inquiries").insert({name,email,phone,event_type,city,event_date,guest_count,duration_hours,notes});
   if(error){console.error("Inquiry insert failed",error.code);return NextResponse.json({error:"Unable to save request. Please try again."},{status:503})}
-  await alertOwner({name,email,phone,event_type,event_date,city,guest_count,notes});
+  await sendInquiryEmails({name,email,phone,event_type,event_date,city,guest_count,notes});
   return NextResponse.json({ok:true},{status:201});
  }catch{return NextResponse.json({error:"Invalid request"},{status:400})}
 }
