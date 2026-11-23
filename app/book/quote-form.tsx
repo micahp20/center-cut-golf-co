@@ -5,7 +5,7 @@ import type { FormEvent } from "react";
 
 const eventTypes = ["Corporate", "Wedding", "Birthday", "Private Party", "Golf Tournament", "Fundraiser", "Other"];
 
-export default function QuoteForm({ eventType }: { eventType?: string }) {
+export default function QuoteForm({ eventType, city }: { eventType?: string; city?: string }) {
   const startedAt = useRef(Date.now());
   const sending = useRef(false);
   const [busy, setBusy] = useState(false);
@@ -72,7 +72,7 @@ export default function QuoteForm({ eventType }: { eventType?: string }) {
         <label>Estimated guests *<input name="guest_count" type="number" min={1} max={10000} required /></label>
       </div>
       <div className="twocol">
-        <label>City or venue *<input name="city" required maxLength={160} /></label>
+        <label>City or venue *<input name="city" required maxLength={160} defaultValue={city || ""} /></label>
         <label>Approximate duration (hours)<input name="duration_hours" type="number" min={1} max={24} step={0.5} /></label>
       </div>
       <label>
