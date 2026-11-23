@@ -13,7 +13,7 @@ export default function Home() {
         <p className="location">COLORADO MOBILE GOLF</p>
         <h1>Your party.<br/><em>Our fairway.</em></h1>
         <p className="lead">A golf simulator at your venue, ready for the first swing. Bring your family, your coworkers, or the whole wedding party.</p>
-        <Link className="button" href="/book">Check event availability</Link>
+        <Link className="button" href="/book">Get a Custom Quote</Link>
       </div>
       <figure className="venue"><img src="/center-cut/simulator.jpg" alt="Center Cut’s enclosed simulator with a putting surface and projected golf course in an event space" /></figure>
     </section>
@@ -25,6 +25,6 @@ export default function Home() {
     </section>
     <section className="plan"><div className="container plan-inner"><div>
       <h2>Have a date in mind?</h2><p>Send your date, venue and guest count. We’ll check availability and put together a quote for your event.</p>
-    </div><Link href="/book" className="button">Request a quote</Link></div></section>
+    </div><Link href="/book" className="button">Get a Custom Quote</Link></div></section>
   </>;
 }

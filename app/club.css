@@ -50,3 +50,36 @@ a:focus-visible,button:focus-visible { outline:3px solid #218fd1; outline-offset
   .motto span { margin:0 .3em; }
   .venue { aspect-ratio:1.6; }
 }
+
+.quote-hero { padding-block:clamp(1.5rem,5vw,3.5rem); }
+.quote-hero h1 {
+  max-width:52rem;
+  margin:0 0 .75rem;
+  font-size:clamp(2.35rem,5.2vw,4.1rem);
+}
+.quote-hero p { margin:.6rem 0 0; }
+.quote-layout {
+  display:grid;
+  grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+  gap:clamp(1.25rem,4vw,3rem);
+  align-items:start;
+  padding-block:clamp(1.25rem,4vw,3rem);
+}
+.quote-form { min-width:0; padding:clamp(1rem,3vw,2rem); border:1px solid #e6e4d9; }
+.quote-form h2,.quote-help h2 { margin:0; font:normal clamp(1.5rem,3vw,2.15rem)/1.15 Georgia,serif; }
+.quote-required { margin:-.7rem 0 0; color:#40564b; font-size:.9rem; }
+.quote-form .twocol { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.quote-form label,.quote-form input,.quote-form select { min-width:0; }
+.quote-form input,.quote-form select,.quote-submit { min-height:44px; }
+.quote-form input[type="date"] { max-width:100%; }
+.quote-submit:disabled { opacity:.65; cursor:progress; }
+.quote-form [role="status"]:empty { display:none; }
+.quote-form small { line-height:1.55; }
+.quote-form small a,.quote-help a { text-decoration:underline; text-underline-offset:.2em; }
+.quote-help { background:#e9e7d4; padding:clamp(1rem,3vw,1.6rem); line-height:1.65; }
+.quote-help h3 { font-size:1.06rem; margin:1.4rem 0 .3rem; }
+.quote-help a { font-weight:bold; }
+.quote-help p:last-child { margin-bottom:0; }
+@media(max-width:700px) {
+  .quote-layout,.quote-form .twocol { grid-template-columns:1fr; }
+}
