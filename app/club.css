@@ -1,0 +1,52 @@
+:root { --green:#053d2b; --deep:#062e21; --gold:#ffca20; --cream:#faf8ef; }
+.club-header { display:flex; align-items:center; gap:2rem; padding:.8rem max(5vw,calc((100vw - 1280px)/2)); background:var(--deep); color:var(--cream); border-bottom:1px solid #466456; }
+.club-brand { display:flex; gap:.75rem; align-items:center; font:bold clamp(1rem,2vw,1.4rem) Georgia,serif; white-space:nowrap; }
+.club-brand img { border-radius:50%; }
+.club-header nav { margin-left:auto; gap:1.5rem; font-size:.94rem; }
+.club-header nav a { padding:.65rem 0; }
+.book-link,.button { background:var(--gold); color:#092d21; padding:.85rem 1.2rem; font-weight:700; border-radius:4px; white-space:nowrap; }
+a:focus-visible,button:focus-visible { outline:3px solid #218fd1; outline-offset:3px; }
+.opening { display:grid; grid-template-columns:45% 55%; background:var(--deep); color:var(--cream); }
+.opening-copy { align-self:center; padding:clamp(2rem,5vw,6rem) 9% clamp(2.8rem,6vw,7rem) max(5vw,calc((100vw - 1280px)/2)); }
+.location,.motto { font-weight:bold; letter-spacing:.16em; font-size:.875rem; }
+.location { color:var(--gold); margin:0 0 1.4rem; }
+.opening h1 { font:normal clamp(3.8rem,6.5vw,7rem)/.98 Georgia,serif; letter-spacing:-.06em; margin:0; }
+.opening em { color:#f6d667; }
+.lead,.plan p,.occasion-list p { font-size:1.06rem; line-height:1.65; }
+.lead { max-width:32rem; margin:1.5rem 0 1.8rem; }
+.venue { margin:0; min-height:100%; position:relative; }
+.venue img { width:100%; height:100%; position:absolute; object-fit:cover; object-position:50% 50%; }
+.motto { background:#e9e7d4; padding:1.1rem; text-align:center; text-transform:uppercase; }
+.motto span { margin:0 .7em; color:#786116; }
+.occasions,.plan { padding-block:clamp(2.8rem,6vw,6rem); }
+.occasions h2,.plan h2 { font:normal clamp(2.4rem,4.8vw,4.3rem)/1.05 Georgia,serif; letter-spacing:-.045em; margin:0 0 1.8rem; }
+.occasion-list { display:grid; gap:2.5rem; grid-template-columns:repeat(3,1fr); }
+.occasion-list article { border-top:2px solid #93a48d; }
+.occasion-list h3 { font:normal 1.8rem Georgia,serif; margin:1rem 0 .5rem; }
+.occasion-list p { margin:0; color:#40564b; }
+.text-link { display:inline-block; margin-top:1.7rem; text-decoration:underline; text-underline-offset:.3em; }
+.plan { background:#dbdfc7; }
+.plan-inner,.club-footer { display:flex; justify-content:space-between; align-items:center; gap:2rem; }
+.plan p { max-width:37rem; margin-bottom:0; }
+.plan h2 { margin-bottom:.7rem; }
+.club-footer strong { font:normal 1.8rem Georgia,serif; }
+.form input,.form select,.form textarea { font-size:1rem; }
+.section .eyebrow { color:#785900; }
+@media(max-width:850px) {
+  .club-header { flex-wrap:wrap; gap:.2rem 1rem; }
+  .club-header nav { order:3; width:100%; justify-content:space-between; font-size:.9rem; gap:.5rem; }
+  .book-link { margin-left:auto; }
+  .opening { grid-template-columns:1fr; }
+  .opening-copy { padding:2.8rem 5vw 2.2rem; }
+  .venue { aspect-ratio:2/1; }
+  .occasion-list { grid-template-columns:1fr; gap:1.4rem; }
+  .plan-inner,.club-footer { align-items:flex-start; flex-direction:column; }
+}
+@media(max-width:420px) {
+  .club-brand { gap:.4rem; }
+  .club-brand img { width:42px; height:42px; }
+  .book-link { padding:.7rem .8rem; }
+  .motto { letter-spacing:.08em; font-size:.8rem; }
+  .motto span { margin:0 .3em; }
+  .venue { aspect-ratio:1.6; }
+}

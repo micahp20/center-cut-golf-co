@@ -1,1 +1,30 @@
-import Link from "next/link";export default function Home(){return <><section className="hero"><div className="container"><div className="eyebrow">Premium mobile golf experiences</div><h1>Bring the fairway.<br/>Own the moment.</h1><p>Professional golf simulator experiences delivered to weddings, corporate events, celebrations and private parties across Colorado's Front Range.</p><Link href="/book" className="button">Request Your Event</Link></div></section><section className="section container"><div className="eyebrow">The experience</div><h2>Golf, wherever you gather.</h2><p className="intro">We bring the experience to you. Tell us about your event, and we'll create a custom quote around your needs.</p><div className="grid">{[["Corporate Events","Team-building, client entertainment and friendly competition."],["Weddings & Celebrations","Give your guests something memorable to enjoy together."],["Private Parties","Birthdays, backyard events and gatherings with friends."]].map(([a,b])=><article className="tile" key={a}><h3>{a}</h3><p>{b}</p><Link href="/experiences">Explore →</Link></article>)}</div></section><section className="darkband"><div className="container"><h2>We bring the golf. You enjoy the event.</h2><p>From your first inquiry to the final swing, we'll help coordinate the details.</p><Link href="/book" className="button">Get a Custom Quote</Link></div></section></>}
+import Link from "next/link";
+
+const occasions = [
+  ["Weddings", "Give the wedding party a reason to gather between the ceremony and the first dance."],
+  ["Company events", "Pair up colleagues for a friendly challenge at your next team or client event."],
+  ["Family parties", "Put first-time golfers and family regulars on the same tee for a birthday or reunion."]
+];
+
+export default function Home() {
+  return <>
+    <section className="opening">
+      <div className="opening-copy">
+        <p className="location">COLORADO MOBILE GOLF</p>
+        <h1>Your party.<br/><em>Our fairway.</em></h1>
+        <p className="lead">A golf simulator at your venue, ready for the first swing. Bring your family, your coworkers, or the whole wedding party.</p>
+        <Link className="button" href="/book">Check event availability</Link>
+      </div>
+      <figure className="venue"><img src="/center-cut/simulator.jpg" alt="Center Cut’s enclosed simulator with a putting surface and projected golf course in an event space" /></figure>
+    </section>
+    <div className="motto">Community <span>•</span> Quality <span>•</span> Good times</div>
+    <section className="occasions container"><h2>Who’s on the tee?</h2>
+      <div className="occasion-list">{occasions.map(([title, copy]) =>
+        <article key={title}><h3>{title}</h3><p>{copy}</p></article>
+      )}</div><Link className="text-link" href="/experiences">Explore all event types</Link>
+    </section>
+    <section className="plan"><div className="container plan-inner"><div>
+      <h2>Have a date in mind?</h2><p>Send your date, venue and guest count. We’ll check availability and put together a quote for your event.</p>
+    </div><Link href="/book" className="button">Request a quote</Link></div></section>
+  </>;
+}
