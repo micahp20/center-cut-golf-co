@@ -1,1 +1,38 @@
-"use client";import {useState} from "react";export default function Book(){const [status,setStatus]=useState("");const [busy,setBusy]=useState(false);const [startedAt,setStartedAt]=useState(()=>Date.now());async function submit(e:React.FormEvent<HTMLFormElement>){e.preventDefault();setBusy(true);setStatus("");const form=new FormData(e.currentTarget);form.set("form_started_at",String(startedAt));try{const response=await fetch("/api/inquiries",{method:"POST",body:JSON.stringify(Object.fromEntries(form.entries())),headers:{"Content-Type":"application/json"}});const result=await response.json();if(!response.ok)throw new Error(result.error||"Unable to send");setStatus("Thanks! Your event request has been received. We'll be in touch.");(e.target as HTMLFormElement).reset();setStartedAt(Date.now())}catch(err){setStatus(err instanceof Error?err.message:"Something went wrong. Please try again.")}finally{setBusy(false)}}return <><section className="pagehero"><div className="container"><div className="eyebrow">Request a quote</div><h1>Let's make it an event.</h1><p>Tell us the basics. We'll follow up with availability and a tailored quote — no payment required.</p></div></section><section className="section container"><form className="form" onSubmit={submit}><div className="twocol"><label>Full name *<input name="name" required maxLength={120}/></label><label>Email *<input name="email" type="email" required maxLength={254}/></label></div><div className="twocol"><label>Phone *<input name="phone" type="tel" required maxLength={40}/></label><label>Event type *<select name="event_type" required defaultValue=""><option value="" disabled>Choose one</option>{["Corporate","Wedding","Birthday","Private Party","Golf Tournament","Fundraiser","Other"].map(x=><option key={x}>{x}</option>)}</select></label></div><div className="twocol"><label>Preferred date *<input name="event_date" type="date" required min={new Date().toISOString().slice(0,10)}/></label><label>Estimated guests *<input name="guest_count" type="number" min="1" max="10000" required/></label></div><div className="twocol"><label>City / venue *<input name="city" required maxLength={160}/></label><label>Approximate duration (hours)<input name="duration_hours" type="number" min="1" max="24" step="0.5"/></label></div><label>Additional details<textarea name="notes" maxLength={3000} placeholder="Indoor/outdoor, venue details, timing, special requests..."/></label><div style={{display:"none"}} aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off"/></label></div><button className="button" disabled={busy}>{busy?"Sending...":"Request My Quote"}</button>{status&&<div role="status" className={"notice "+(status.startsWith("Thanks")?"":"error")}>{status}</div>}<small>By submitting, you agree to be contacted about your inquiry. We do not take payment through this form. <a href="/privacy" style={{textDecoration:"underline"}}>Privacy Policy</a>.</small></form></section></>}
+import type { Metadata } from "next";
+import QuoteForm from "./quote-form";
+
+export const metadata: Metadata = {
+  title: "Get a Mobile Golf Simulator Rental Quote | Center Cut Golf Co.",
+  description: "Request a custom quote for a mobile golf simulator rental in South Denver, Denver Metro, or Northern Colorado. No payment required.",
+  alternates: { canonical: "https://centercutgolfco.com/book" },
+};
+
+export default async function Book({
+  searchParams,
+}: {
+  searchParams: Promise<{ event?: string | string[] }>;
+}) {
+  const { event } = await searchParams;
+
+  return (
+    <>
+      <section className="pagehero quote-hero">
+        <div className="container">
+          <h1>Get a Custom Golf Simulator Quote</h1>
+          <p>Tell us when and where you’re hosting. We’ll check availability and put together a quote for bringing our mobile golf simulator to your event.</p>
+        </div>
+      </section>
+      <div className="container quote-layout">
+        <QuoteForm eventType={typeof event === "string" ? event : undefined} />
+        <aside className="quote-help" aria-labelledby="quote-next">
+          <h2 id="quote-next">What happens next?</h2>
+          <p>We’ll review your date, venue, and guest count, then follow up by email about availability, setup, and pricing.</p>
+          <p>No payment is required to request a quote. Your event is confirmed separately.</p>
+          <h3>Questions about your venue?</h3>
+          <a href="tel:+17209281208">Call (720) 928-1208</a>
+          <p>Serving South Denver, Denver Metro, and Northern Colorado.</p>
+        </aside>
+      </div>
+    </>
+  );
+}
