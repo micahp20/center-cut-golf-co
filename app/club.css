@@ -259,3 +259,32 @@ a:focus-visible,button:focus-visible { outline:3px solid #218fd1; outline-offset
 .faq-item p { margin:0; padding:0 2.3rem 1.25rem .2rem; color:#40564b; line-height:1.7; }
 @media(max-width:850px) { .faq-layout { grid-template-columns:1fr; } .faq-intro { position:static; } }
 @media(max-width:420px) { .club-header nav { gap:.35rem; font-size:.78rem; } .club-header nav a { white-space:nowrap; } }
+
+/* Contact page — event photography, readable contrast */
+.contact-photo-hero {
+  position:relative;
+  isolation:isolate;
+  min-height:clamp(22rem,38vw,32rem);
+  display:flex;
+  align-items:center;
+  background-color:#062e21;
+  background-image:
+    linear-gradient(90deg,rgba(4,35,25,.95) 0%,rgba(4,35,25,.85) 42%,rgba(4,35,25,.52) 100%),
+    url("/center-cut/events/corporate-events.png");
+  background-position:center,center 47%;
+  background-size:cover;
+  color:#fff;
+}
+.contact-photo-hero .container { position:relative; z-index:1; }
+.contact-photo-hero h1 { max-width:13ch; text-wrap:balance; }
+.contact-photo-hero p { max-width:35rem; color:#f8f8ef; text-shadow:0 1px 3px rgba(0,0,0,.4); }
+.contact-photo-hero .eyebrow { color:#ffca20; }
+@media(max-width:700px) {
+  .contact-photo-hero {
+    min-height:22rem;
+    background-image:
+      linear-gradient(90deg,rgba(4,35,25,.94) 0%,rgba(4,35,25,.79) 64%,rgba(4,35,25,.68) 100%),
+      url("/center-cut/events/corporate-events.png");
+    background-position:center,58% center;
+  }
+}
