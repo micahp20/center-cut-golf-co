@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 export default async function Book({
   searchParams,
 }: {
-  searchParams: Promise<{ event?: string | string[] }>;
+  searchParams: Promise<{ event?: string | string[]; city?: string | string[] }> ;
 }) {
-  const { event } = await searchParams;
+  const { event, city } = await searchParams;
 
   return (
     <>
@@ -23,7 +23,7 @@ export default async function Book({
         </div>
       </section>
       <div className="container quote-layout">
-        <QuoteForm eventType={typeof event === "string" ? event : undefined} />
+        <QuoteForm eventType={typeof event === "string" ? event : undefined} city={typeof city === "string" ? city : undefined} />
         <aside className="quote-help" aria-labelledby="quote-next">
           <h2 id="quote-next">What happens next?</h2>
           <p>We’ll review your date, venue, and guest count, then follow up by email about availability, setup, and pricing.</p>
