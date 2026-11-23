@@ -2,13 +2,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import "./globals.css";
 import "./club.css";
+import EventMenu from "./event-menu";
 
 export const metadata: Metadata = {
   title: "Center Cut Golf Co | Colorado Mobile Golf Simulator",
   description: "Bring mobile simulator golf to weddings, company events and family parties in South Denver, Denver Metro, and Northern Colorado."
 };
 
-const pages = ["Experiences", "Packages", "About", "Contact"];
+const pages = ["Packages", "About", "Contact"];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <html lang="en"><body>
@@ -17,7 +18,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <img src="/center-cut/emblem.png" alt="" width="50" height="50" />
         <span>Center Cut Golf Co</span>
       </Link>
-      <nav aria-label="Main navigation">{pages.map(page =>
+      <nav aria-label="Main navigation">
+        <EventMenu />
+        {pages.map(page =>
         <Link href={"/" + page.toLowerCase()} key={page}>{page}</Link>
       )}</nav>
       <Link className="book-link" href="/book">Get a quote</Link>
