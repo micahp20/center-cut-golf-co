@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "Bring mobile simulator golf to weddings, company events and family parties in South Denver, Denver Metro, and Northern Colorado."
 };
 
-const pages = ["Packages", "FAQ", "Contact"];
+const pages = ["FAQ", "Contact"];
 const serviceRegions = [
   {
     "title": "South Denver",
